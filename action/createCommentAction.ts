@@ -12,6 +12,10 @@ export const createCommentAction = async (formData: FormData) => {
 
   const { avatar, email, username } = await getUserData();
 
+  if (email === undefined) {
+    return redirect('/sign-in');
+  }
+
   const data: Comments = {
     comment_id,
     avatar,

@@ -16,10 +16,13 @@ const page = async (): Promise<React.ReactElement> => {
 
   if (error) return <p>Error fetching diaries</p>;
 
+  if (data.length === 0)
+    return <p className="text-center text-xl">No diaries found</p>;
+
   return (
     <Wrapper title="My Diary">
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.map((diary) => {
+        {data?.map((diary) => {
           return (
             <PostContent
               id={diary.id}
