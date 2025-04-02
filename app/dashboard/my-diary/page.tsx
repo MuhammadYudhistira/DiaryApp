@@ -31,6 +31,7 @@ const page = async (): Promise<React.ReactElement> => {
               email={diary.email}
               content={diary.content}
               avatar={diary.avatar}
+              currentUser={email as string}
               createdAt={getRelativeTime(diary.created_at || '')}
             />
           );

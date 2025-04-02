@@ -2,8 +2,11 @@ import React from 'react';
 import PostContent from './PostContent';
 import { supabase } from '@/utils/supabase';
 import { getRelativeTime } from '@/utils/helper';
+import { getUserData } from '@/utils/clerk';
 
 const CardDiaries = async (): Promise<React.ReactNode> => {
+  const { email } = await getUserData();
+
   const { data, error } = await supabase
     .from('diary')
     .select()
@@ -25,6 +28,7 @@ const CardDiaries = async (): Promise<React.ReactNode> => {
             email={diary.email}
             content={diary.content}
             avatar={diary.avatar}
+            currentUser={email as string}
             createdAt={getRelativeTime(diary.created_at || '')}
           />
         );
