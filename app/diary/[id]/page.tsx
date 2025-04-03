@@ -138,7 +138,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
 
               <div className="flex gap-3">
                 <Image
-                  src={avatar as string}
+                  src={avatar ? (avatar as string) : '/default-avatar.jpg'}
                   width={50}
                   height={50}
                   alt="profile"
