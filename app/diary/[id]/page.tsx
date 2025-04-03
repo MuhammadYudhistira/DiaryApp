@@ -76,7 +76,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
 
           <div className="flex items-center gap-3 mt-4">
             <Image
-              src={data.avatar}
+              src={data?.avatar as string}
               width={50}
               height={50}
               alt="profile"
@@ -138,7 +138,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
 
               <div className="flex gap-3">
                 <Image
-                  src={avatar}
+                  src={avatar as string}
                   width={50}
                   height={50}
                   alt="profile"
