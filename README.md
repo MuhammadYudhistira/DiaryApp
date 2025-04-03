@@ -1,10 +1,30 @@
-### TODO
+# Open Source Diary App
 
-Open Source Diary App
+An open-source diary application where users can write, manage, and interact with diary entries.
 
-1. Validate Comment Form for login user only ✅
-2. User bisa edit atau delte diarynya sendiri di dashboard ✅
-3. validasi jika belum ada data diary ✅
-4. User bisa melihat list commentnya sendiri ✅
-5. User bisa menghapus commentnya sendiri ✅
-6. Tambahkan pagination pada FYP ✅
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/diary-app.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd diary-app
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## Technologies Used
+
+- Next.js
+- Supabase (Database)
+- Clerk (Authentication)
+- Tailwind CSS (Styling)
+- DaisyUI (UI Components)
