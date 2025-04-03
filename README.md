@@ -6,7 +6,7 @@ An open-source diary application where users can write, manage, and interact wit
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/diary-app.git
+   git clone https://github.com/MuhammadYudhistira/DiaryApp.git
    ```
 2. Navigate to the project directory:
    ```sh
