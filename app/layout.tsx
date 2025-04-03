@@ -31,7 +31,7 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   return (
-    <ClerkProvider>
+    <ClerkProvider afterSignOutUrl={'/?page=1'}>
       <html data-theme="black" lang={locale}>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#090D14] h-screen`}>

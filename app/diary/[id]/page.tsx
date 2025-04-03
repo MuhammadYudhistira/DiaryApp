@@ -12,7 +12,7 @@ import React from 'react';
 const Page = async (props: { params: Promise<{ id: string }> }) => {
   const { id } = await props.params;
 
-  const { email } = await getUserData();
+  const { email, avatar } = await getUserData();
 
   const { data, error } = await supabase
     .from('diary')
@@ -138,7 +138,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
 
               <div className="flex gap-3">
                 <Image
-                  src={data.avatar}
+                  src={avatar}
                   width={50}
                   height={50}
                   alt="profile"
