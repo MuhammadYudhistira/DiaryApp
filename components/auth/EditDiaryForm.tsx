@@ -13,7 +13,6 @@ const EditDiaryForm = async ({ id }: EditDiaryFormProps) => {
     .eq('id', id)
     .single();
 
-  console.log('🚀 ~ EditDiaryForm ~ data:', data);
   if (error) <p>Error Fetching Data</p>;
 
   return (

@@ -5,7 +5,7 @@ import { getRelativeTime } from '@/utils/helper';
 import { supabase } from '@/utils/supabase';
 import React from 'react';
 
-const page = async (): Promise<React.ReactElement> => {
+const page = async (): Promise<React.ReactNode> => {
   const { email } = await getUserData();
 
   const { data, error } = await supabase

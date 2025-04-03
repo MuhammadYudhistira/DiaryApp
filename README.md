@@ -7,4 +7,4 @@ Open Source Diary App
 3. validasi jika belum ada data diary ✅
 4. User bisa melihat list commentnya sendiri
 5. User bisa menghapus commentnya sendiri
-6. Tambahkan pagination pada FYP
+6. Tambahkan pagination pada FYP ✅
