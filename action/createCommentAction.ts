@@ -36,7 +36,6 @@ export const createCommentAction = async (formData: FormData) => {
     .select('comments')
     .eq('id', diary_id)
     .single();
-  console.log('🚀 ~ createCommentAction ~ getComment:', getComment);
 
   const existingComments: Array<Comments> = getComment.data?.comments || [];
 
