@@ -8,9 +8,10 @@ export const supabase = createClient(
 
 export interface Diary {
   diary_id?: number;
+  title: string;
   content: string;
   email: string | undefined;
-  username?: string | null | null;
+  username?: string | null;
   avatar: string | undefined;
   created_at?: string;
   comments?: Array<Comments>;

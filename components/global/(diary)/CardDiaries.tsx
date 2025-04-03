@@ -29,13 +29,14 @@ const CardDiaries = async ({
     return <p className="text-center text-xl">No diaries found</p>;
 
   return (
-    <>
+    <section className="">
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4">
         {data.map((diary) => {
           return (
             <PostContent
               key={diary.id}
               id={diary.id}
+              title={diary.title}
               username={diary.username}
               email={diary.email}
               content={diary.content}
@@ -47,19 +48,21 @@ const CardDiaries = async ({
           );
         })}
       </div>
-      <div className="join w-full justify-center mt-4">
-        {Array.from({ length: totalPage }, (_, index) => (
-          <Link
-            key={index + 1}
-            className={`join-item btn btn-md ${
-              currentPage == index + 1 ? ' btn-primary' : ''
-            }`}
-            href={`?page=${index + 1}`}>
-            {index + 1}
-          </Link>
-        ))}
-      </div>
-    </>
+      {totalPage === 1 ? null : (
+        <div className="join w-full justify-center mt-4">
+          {Array.from({ length: totalPage }, (_, index) => (
+            <Link
+              key={index + 1}
+              className={`join-item btn btn-md ${
+                currentPage == index + 1 ? ' btn-primary' : ''
+              }`}
+              href={`?page=${index + 1}`}>
+              {index + 1}
+            </Link>
+          ))}
+        </div>
+      )}
+    </section>
   );
 };
 

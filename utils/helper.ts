@@ -13,3 +13,8 @@ export const getRelativeTime = (dateString: string) => {
   if (diffInHours < 24) return formatter.format(-diffInHours, 'hour');
   return formatter.format(-diffInDays, 'day');
 };
+
+export const truncateWords = (text: string, limit: number) => {
+  const words = text.split(' ');
+  return words.length > limit ? words.slice(0, limit).join(' ') + ' ...' : text;
+};

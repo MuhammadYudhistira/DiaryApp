@@ -12,6 +12,7 @@ const NavbarButton = (): React.ReactElement => {
     <div className="flex items-center gap-4">
       <Link href={'/dashboard'}>Create Diary</Link>
       <Link href={'/dashboard/my-diary'}>My Diary</Link>
+      <Link href={'/dashboard/my-comment'}>My Comment</Link>
       <UserButton />
     </div>
   ) : (

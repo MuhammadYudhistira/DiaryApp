@@ -8,11 +8,12 @@ export const editDiaryAction = async (formData: FormData) => {
 
   const id = formData.get('id') as string;
   const content = formData.get('content') as string;
+  const title = formData.get('title') as string;
 
-  console.log('🚀 ~ editDiaryAction ~ content:', content);
+  const data = { content: content, title: title };
 
   try {
-    await supabase.from('diary').update({ content: content }).eq('id', id);
+    await supabase.from('diary').update(data).eq('id', id);
   } catch (error) {
     console.error('Error Deleting diary:', error);
     return;

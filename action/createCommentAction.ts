@@ -7,8 +7,12 @@ import { redirect } from 'next/navigation';
 
 export const createCommentAction = async (formData: FormData) => {
   const content = formData.get('content') as string;
-  const diary_id = formData.get('diary_id');
+  const diary_id = formData.get('diary_id')
+    ? Number(formData.get('diary_id'))
+    : undefined;
+  const title = formData.get('title') as string;
   const comment_id = randomUUID();
+  const created_at = new Date().toISOString();
 
   const { avatar, email, username } = await getUserData();
 
@@ -22,6 +26,9 @@ export const createCommentAction = async (formData: FormData) => {
     email,
     username,
     content,
+    created_at,
+    title,
+    diary_id,
   };
 
   const getComment = await supabase

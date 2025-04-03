@@ -29,10 +29,12 @@ const page = async (): Promise<React.ReactNode> => {
               key={diary.id}
               username={diary.username}
               email={diary.email}
+              title={diary.title}
               content={diary.content}
               avatar={diary.avatar}
               currentUser={email as string}
               createdAt={getRelativeTime(diary.created_at || '')}
+              commentTotal={diary?.comments?.length}
             />
           );
         })}

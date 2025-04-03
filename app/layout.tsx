@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Open Diary',
+  title: 'Global Diary App',
   description: 'Open Source Diary App',
 };
 
@@ -32,9 +32,9 @@ export default async function RootLayout({
   const { locale } = await params;
   return (
     <ClerkProvider>
-      <html data-theme="luxury" lang={locale}>
+      <html data-theme="black" lang={locale}>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#090D14] h-screen`}>
           <Navbar />
           {children}
           <Toaster position="bottom-center" richColors />

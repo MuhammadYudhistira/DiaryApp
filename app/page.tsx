@@ -2,11 +2,12 @@ import CardDiaries from '@/components/global/(diary)/CardDiaries';
 import Wrapper from '@/components/global/Wrapper';
 import { redirect } from 'next/navigation';
 
-export default function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function Home(
+  props: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const { page } = searchParams;
 
   if (page === undefined) {
